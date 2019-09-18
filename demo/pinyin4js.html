@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<!-- jQuery -->
+	<script src="http://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+	<script type="text/javascript" src="../pinyin4js.js" ></script>
+	<script>
+		$(document).ready(function(){
+			var pinyin = chs2pinyin('I am chinese!我们是中国人！', false, false, ' ');
+			console.log(pinyin);
+		});
+	</script>
+</html>
