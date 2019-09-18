@@ -6,14 +6,17 @@
 	</head>
 	<body>
 	</body>
+	<script type="text/javascript" src="../pinyins.js" ></script>
+	<script type="text/javascript" src="../polyphones.js" ></script>
 	<script type="text/javascript" src="../pinyin4js.js" ></script>
 	<script type="text/javascript" src="../jsunit.js" ></script>
 	<script>
-//		assertEquals('chong qing', pinyin('重庆', false, false, ' '));
-		assertEquals('zhong da', pinyin('重大', false, false, ' '));
-//		assertEquals('chong xin', pinyin('重新', false, false, ' '));
-		
-		assertEquals('can tian da shu', pinyin('参天大树', false, false, ' '));
-		assertEquals('ren shen', pinyin('人参', false, false, ' '));
+		assertEquals('chóng qìng', pinyin('重庆', 0, false, false, ' '));
+		assertEquals('zhòng dà', pinyin('重大',  0, false, false, ' '));
+		assertEquals('chóng xīn', pinyin('重新',  0, false, false, ' '));
+		assertEquals('cān tiān dà shù', pinyin('参天大树',  0, false, false, ' '));
+		assertEquals('cēn cī bù qí', pinyin('参差不齐',  0, false, false, ' '));
+		assertEquals('bù gòng dài tiān', pinyin('不共戴天',  0, false, false, ' '));
+		assertEquals('huàn nàn yǔ gòng de xiōng dì', pinyin('患难与共的兄弟',  0, false, false, ' '));
 	</script>
 </html>

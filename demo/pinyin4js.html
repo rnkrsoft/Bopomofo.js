@@ -6,13 +6,14 @@
 	</head>
 	<body>
 	</body>
-	<!-- jQuery -->
-	<script src="http://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-	<script type="text/javascript" src="../pinyin4j.min.js" ></script>
+	<script type="text/javascript" src="../pinyins.js" ></script>
+	<script type="text/javascript" src="../polyphones.js" ></script>
+	<script type="text/javascript" src="../pinyin4js.js" ></script>
+	<script type="text/javascript" src="../jsunit.js" ></script>
 	<script>
-		$(document).ready(function(){
-			var py = pinyin('I am chinese!我们是中国人！', false, false, ' ');
-			console.log(py);
-		});
+		var v1 = pinyin('中国人！',0, false, false, ' ');
+		alert(v1);
+		var v2 = pinyin('患难与共的兄弟！！',0, false, false, ' ');
+		alert(v2);
 	</script>
 </html>

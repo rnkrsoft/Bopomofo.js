@@ -1,4 +1,5 @@
-{
+;
+window.polyphones = {
 	"阿訇": "ā,hōng",
 	"阿罗汉": "ā,luó,hàn",
 	"阿木林": "ā,mù,lín",
@@ -596,6 +597,7 @@
 	"骨殖": "gǔ,shi",
 	"中奖": "zhòng,jiǎng",
 	"中靶": "zhòng,bǎ",
+	"中国": "zhōng,guǒ",
 	"种子": "zhǒng,zi",
 	"播种": "bō,zhǒng",
 	"种植": "zhòng,zhí",
@@ -825,4 +827,4 @@
 	"重洋": "chóng,yáng",
 	"重峦叠嶂": "chóng,luán,dié,zhàng",
 	"成长": "chéng,zhǎng"
-}
+};
