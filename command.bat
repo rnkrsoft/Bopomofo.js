@@ -1,0 +1,1 @@
+java -jar .\closure-compiler-v20190709.jar --js_output_file=pinyin4js.min.js .\pinyin4js.js .\pinyins.js .\polyphones.js .\cht2chs.js --create_source_map pinyin4js.min.map
