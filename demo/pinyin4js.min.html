@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试pinyin4js</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript" src="../libs/pinyins.js" ></script>
+	<script type="text/javascript" src="../libs/polyphones.js" ></script>
+	<script type="text/javascript" src="../pinyin4js.min.js" ></script>
+	<script type="text/javascript" src="../libs/jsunit.js" ></script>
+	<script>
+		var v1 = pinyin('中国人！',0, false, false, ' ');
+		console.log(v1);
+		alert(v1);
+		var v2 = pinyin('患难与共的兄弟！！',1, false, false, ' ');
+		console.log(v2);
+		alert(v2);
+		var v3 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false, ' ');
+		console.log(v3);
+		alert(v3);
+	</script>
+</html>
