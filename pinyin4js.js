@@ -1,10 +1,11 @@
 /**
- * 汉字转换拼音
+ * 将汉字句子转换拼音，支持声母带音调，数字音调，无音调三种格式
  * @param {Object} words 句子
- * @param {Object} type 拼音样式 0-声母带音调，1-音调在最后，2-无音调，默认值0
+ * @param {Object} toneType 拼音样式 0-声母带音调，1-数字音调在最后，2-无音调，默认值0
  * @param {Object} upper 是否大写,默认为假（小写）
  * @param {Object} cap 是否首字母大写,在upper为假时有效,默认为假（小写）
  * @param {Object} split 分割符号，默认一个空格
+ * @return 拼音
  */
 function pinyin(words, toneType, upper, cap, split) {
 	(upper == undefined || upper == null) ? upper = false : upper;
@@ -72,7 +73,7 @@ function handlePinyin(result, types, toneType, upper, cap, split){
 	for (var i = 0; i < result.length; i++) {
 		var py = result[i];
 		var type = types[i];
-		var py1 = py;
+		var py1 = '';
 		if(type == 1 || type == 2){//如果是拼音或者多音字
 			if(toneType == 1 || toneType == 2){//如需要数字声调或者无声调
 				var tone = -1;//音调数字形式
@@ -92,6 +93,8 @@ function handlePinyin(result, types, toneType, upper, cap, split){
 				}
 				//如果是带音调数字形式，则将音调添加到末尾
 				py1 = py1 + (toneType == 1 ? tone + 1 : '');
+			}else{
+				py1 = py;
 			}
 			if (upper) {
 				py1 = py1.toUpperCase();
