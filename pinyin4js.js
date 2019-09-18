@@ -118,6 +118,8 @@ function handlePinyin(result, types, toneType, upper, cap, split){
  */
 function getPolyphoneWord(words, current, pos, lastPolyphoneIndex, type){
 	var pinyinSeparator = ","; // 拼音分隔符
+	var results = [];
+	var maxMatchLen = 0;
 	for(var w in window.polyphones){
 		var len = w.length;
 		var beginPos = pos - len;
@@ -126,9 +128,22 @@ function getPolyphoneWord(words, current, pos, lastPolyphoneIndex, type){
 		var temp = words.slice(beginPos, endPos);
 		var index = -1;
 		if((index = temp.indexOf(w)) > -1){
+			if(len > maxMatchLen){
+				maxMatchLen = len;
+			}
 			//当前汉字在多音字词组的偏移位置，用于修正词组的替换
 			var offset = w.indexOf(current);
-			return {words: window.polyphones[w].split(pinyinSeparator), offset: offset};
+			var data = {words: window.polyphones[w].split(pinyinSeparator), offset: offset, length: len};
+			results.push(data);
+		}
+	}
+	if(results.length == 1){
+		return results[0];
+	}else if(results.length > 1){//如果存在多个匹配的多音字词组，以最大匹配项为最佳答案,例如词库中有'中国人'和'中国',最理想的答案应该是最大匹配
+		for (var i = 0; i < results.length; i++) {
+			if(results[i].length == maxMatchLen){
+				return results[i];
+			}
 		}
 	}
 	return null;
