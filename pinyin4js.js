@@ -10,7 +10,7 @@
 function pinyin(words, toneType, upper, cap, split) {
 	(upper == undefined || upper == null) ? upper = false : upper;
 	(cap == undefined || cap == null) ? cap = false : cap;
-	(split == undefined || split == null) ? ' ' : split;
+	(split == undefined || split == null) ? split = ' ' : split;
 	var result = [];
 	//0为不需要处理，1为单音字，2为已处理的多音字
 	var types = [];
