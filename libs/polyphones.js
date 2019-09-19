@@ -607,7 +607,7 @@ window.polyphones = {
 	"骨殖": "gǔ,shi",
 	"中奖": "zhòng,jiǎng",
 	"中靶": "zhòng,bǎ",
-	"中国": "zhōng,guǒ",
+	"中国": "zhōng,guó",
 	"种子": "zhǒng,zi",
 	"播种": "bō,zhǒng",
 	"种植": "zhòng,zhí",

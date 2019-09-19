@@ -15,8 +15,6 @@ function pinyin(words, toneType, upper, cap, split) {
 	//0为不需要处理，1为单音字，2为已处理的多音字
 	var types = [];
 	var lastPolyphoneIndex = 0;
-	var name;
-	var reg = new RegExp('[a-zA-Z0-9\- ]');
 	for (var i = 0, len = words.length; i < len; ) {
 		var _char = words.substr(i, 1);
 		var unicode = _char.charCodeAt(0);
@@ -174,6 +172,6 @@ function capitalize(py){
 		var spare = py.substr(1, py.length);
 		return first + spare;
 	}else{
-		return word;
+		return py;
 	}
 }
