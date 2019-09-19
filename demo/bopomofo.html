@@ -9,16 +9,114 @@
 	<script type="text/javascript" src="../libs/pinyins.js" ></script>
 	<script type="text/javascript" src="../libs/polyphones.js" ></script>
 	<script type="text/javascript" src="../bopomofo.js" ></script>
+	<!--assertEquals(expected, actual) 是一个仿照junit的断言函数的JS实现-->
 	<script type="text/javascript" src="../libs/jsunit.js" ></script>
+	
 	<script>
-		var v1 = pinyin('中国人！',0, false, false, ' ');
-		console.log(v1);
-		alert(v1);
-		var v2 = pinyin('患难与共的兄弟！！',1, true, false, ' ');
-		console.log(v2);
-		alert(v2);
-		var v3 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, true, ' ');
-		console.log(v3);
-		alert(v3);
+		{
+			var v1 = pinyin('中国人！');
+			console.log(v1);
+			assertEquals('zhōng guó rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0);
+			console.log(v1);
+			assertEquals('zhōng guó rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, false);
+			console.log(v1);
+			assertEquals('zhōng guó rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, true);
+			console.log(v1);
+			assertEquals('ZHŌNG GUÓ RÉN！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, false, false);
+			console.log(v1);
+			assertEquals('zhōng guó rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, true, false);
+			console.log(v1);
+			assertEquals('ZHŌNG GUÓ RÉN！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, true, true);
+			console.log(v1);
+			assertEquals('ZHŌNG GUÓ RÉN！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, false, true);
+			console.log(v1);
+			assertEquals('Zhōng Guó Rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, false, false, ',');
+			console.log(v1);
+			assertEquals('zhōng,guó,rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, false, true, ',');
+			console.log(v1);
+			assertEquals('Zhōng,Guó,Rén！', v1);
+		}
+		{
+			var v1 = pinyin('中国人！',0, true, true, ',');
+			console.log(v1);
+			assertEquals('ZHŌNG,GUÓ,RÉN！', v1);
+		}
+		{
+			var v1 = pinyin('患难与共的兄弟！！');
+			console.log(v1);
+			assertEquals('huàn nàn yǔ gòng de xiōng dì！！', v1);
+		}
+		{
+			var v1 = pinyin('患难与共的兄弟！！',1);
+			console.log(v1);
+			assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+		}
+		{
+			var v1 = pinyin('患难与共的兄弟！！',1, false);
+			console.log(v1);
+			assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+		}
+		{
+			var v1 = pinyin('患难与共的兄弟！！',1, false, false);
+			console.log(v1);
+			assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+		}
+		{
+			var v1 = pinyin('患难与共的兄弟！！',1, false, false, ',');
+			console.log(v1);
+			assertEquals('huan4,nan4,yu3,gong4,de0,xiong1,di4！！', v1);
+		}
+		{
+			var v1 = pinyin('this is a pinyin library!这是一个汉语拼音库！！');
+			console.log(v1);
+			assertEquals('this is a pinyin library! zhè shì yī gè hàn yǔ pīn yīn kù！！', v1);
+		}
+		{
+			var v1 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2);
+			console.log(v1);
+			assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+		}
+		{
+			var v1 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false);
+			console.log(v1);
+			assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+		}
+		{
+			var v1 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false);
+			console.log(v1);
+			assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+		}
+		{
+			var v1 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false, ',');
+			console.log(v1);
+			assertEquals('this is a pinyin library!,zhe,shi,yi,ge,han,yu,pin,yin,ku！！', v1);
+		}
 	</script>
 </html>
