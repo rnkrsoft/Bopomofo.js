@@ -30,7 +30,7 @@ function pinyin(words, toneType, upper, cap, split) {
 
 例如：
 
-```
+```js
 var v1 = pinyin('中国人！',0, false, false, ' ');
 console.log(v1);//控制台输出 zhōng guǒ rén！
 var v2 = pinyin('患难与共的兄弟！！',1, false, false, ' ');
@@ -39,3 +39,114 @@ var v3 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, 
 console.log(v3);//控制台输出 this is a pinyin library! zhe shi yi ge han yu pin yin ku！！
 ```
 
+##  Bopomofo-jquery.js
+Bopomofo.js在jQuery下的集成，通过$.bopomofo.pinyin();调用汉语转换为拼音。通过jQuery构建bopomofo对象，并调用pinyin()函数。
+
+```js
+	var bopomofo = $.bopomofo();
+{
+	var v1 = bopomofo.pinyin('中国人！');
+	console.log(v1);
+	assertEquals('zhōng guó rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0);
+	console.log(v1);
+	assertEquals('zhōng guó rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, false);
+	console.log(v1);
+	assertEquals('zhōng guó rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, true);
+	console.log(v1);
+	assertEquals('ZHŌNG GUÓ RÉN！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, false, false);
+	console.log(v1);
+	assertEquals('zhōng guó rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, true, false);
+	console.log(v1);
+	assertEquals('ZHŌNG GUÓ RÉN！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, true, true);
+	console.log(v1);
+	assertEquals('ZHŌNG GUÓ RÉN！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, false, true);
+	console.log(v1);
+	assertEquals('Zhōng Guó Rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, false, false, ',');
+	console.log(v1);
+	assertEquals('zhōng,guó,rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, false, true, ',');
+	console.log(v1);
+	assertEquals('Zhōng,Guó,Rén！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('中国人！',0, true, true, ',');
+	console.log(v1);
+	assertEquals('ZHŌNG,GUÓ,RÉN！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('患难与共的兄弟！！');
+	console.log(v1);
+	assertEquals('huàn nàn yǔ gòng de xiōng dì！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('患难与共的兄弟！！',1);
+	console.log(v1);
+	assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('患难与共的兄弟！！',1, false);
+	console.log(v1);
+	assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('患难与共的兄弟！！',1, false, false);
+	console.log(v1);
+	assertEquals('huan4 nan4 yu3 gong4 de0 xiong1 di4！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('患难与共的兄弟！！',1, false, false, ',');
+	console.log(v1);
+	assertEquals('huan4,nan4,yu3,gong4,de0,xiong1,di4！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('this is a pinyin library!这是一个汉语拼音库！！');
+	console.log(v1);
+	assertEquals('this is a pinyin library! zhè shì yī gè hàn yǔ pīn yīn kù！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('this is a pinyin library!这是一个汉语拼音库！！',2);
+	console.log(v1);
+	assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false);
+	console.log(v1);
+	assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false);
+	console.log(v1);
+	assertEquals('this is a pinyin library! zhe shi yi ge han yu pin yin ku！！', v1);
+}
+{
+	var v1 = bopomofo.pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false, ',');
+	console.log(v1);
+	assertEquals('this is a pinyin library!,zhe,shi,yi,ge,han,yu,pin,yin,ku！！', v1);
+}
+```
