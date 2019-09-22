@@ -8,6 +8,9 @@
  * @return 拼音
  */
 function pinyin(words, toneType, upper, cap, split) {
+	if(!words){
+		return "";
+	}
 	toneType = (toneType == undefined || toneType == null) ? toneType = 0 : toneType;
 	upper = (upper == undefined || upper == null) ? upper = false : upper;
 	cap = (cap == undefined || cap == null) ? cap = false : cap;

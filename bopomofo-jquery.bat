@@ -1,0 +1,1 @@
+java -jar .\closure-compiler-v20190709.jar --js_output_file=bopomofo-jquery.min.js .\pinyins.js .\polyphones.js .\cht2chs.js .\bopomofo-jquery.js  --create_source_map bopomofo-jquery.min.map
