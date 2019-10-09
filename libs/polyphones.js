@@ -852,7 +852,7 @@ if(!window.polyphones) {
 		"东西涌": "dōng,xī,chōng",
 		"霞涌": "xiá,chōng",
 		"葵涌": "kuí,chōng",
-		"众行": "zhòngxíng",
+		"众行": "zhòng,xíng",
 		"出行": "chū,xíng",
 		"行员": "háng,yuān",
 		"飞行员": "fēi,xíng,yuān",

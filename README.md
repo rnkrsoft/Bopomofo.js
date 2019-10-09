@@ -4,6 +4,9 @@ H5可以使用的汉字转拼音库
 2. 实现汉语单词转拼音
 3. 实现汉语句子转拼音，在一定程度解决多音字问题
 
+# 拼音搜索引擎
+官网在线搜索：[pinyin.rnkrsoft.com](https://pinyin.rnkrsoft.com) ，当发现不能正确解析词语读音，可以来这里维护词库，向我们提出申请。
+
 ## 原理
 1. 获取当前汉字的unicode值，如果在[19968,40869]中文区间，则执行第2步，否则直接输出（可能为符号，数字，英文字母或其他语系）
 2. 检查当前汉字是否在多音字库中，如果存在返回该汉字发音的拼音和汉字序列数组，将当前句子上下文进行序列匹配，如果能够匹配，则为该发音。如果无返回，则进入第三步
@@ -32,7 +35,7 @@ function pinyin(words, toneType, upper, cap, split) {
 
 ```js
 var v1 = pinyin('中国人！',0, false, false, ' ');
-console.log(v1);//控制台输出 zhōng guǒ rén！
+console.log(v1);//控制台输出 zhōng guó rén！
 var v2 = pinyin('患难与共的兄弟！！',1, false, false, ' ');
 console.log(v2);//控制台输出 huan4 nan4 yu3 gong4 de0 xiong1 di4！！
 var v3 = pinyin('this is a pinyin library!这是一个汉语拼音库！！',2, false, false, ' ');
